@@ -32,7 +32,7 @@ pipeline {
         stage("Deploy"){
             steps{
                 script{
-                    sh "helm update service1 myhelm/myhelm -f values.yaml"
+                    sh "helm upgrade service1 myhelm/myhelm -f values.yaml"
                 }
             }
         }
