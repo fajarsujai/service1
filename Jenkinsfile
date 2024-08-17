@@ -23,7 +23,7 @@ pipeline {
         stage("Generate Tag"){
             steps{
                 script{
-                    sh "./generatetag.sh ${GIT_COMMIT}"
+                    sh "sh generatetag.sh ${GIT_COMMIT}"
                 }
             }
         }
