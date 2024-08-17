@@ -14,7 +14,7 @@ pipeline {
         stage("Docker Push"){
             steps{
                 script{
-                    sh "docker push fajarsujai/go-helloworld:${GIT_COMMIT}"
+                    sh "docker push fajarsujai/service1:${GIT_COMMIT}"
                 }
             }
         }
