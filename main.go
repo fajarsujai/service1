@@ -53,26 +53,36 @@ func main() {
 	// godotenv package
 	// appenv := os.Getenv("APPENV")
 	// apport := os.Getenv("PORT")
+
+	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Update 1 dan Hello ")
+		log.Println("Update 1 dan Hello ")
+	})
 	
 	// Periksa kode status HTTP
 	// Handler untuk rute yang ada
-	mux := http.NewServeMux()
-	mux.HandleFunc("/service1", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path == "/service1" {
-			w.Write([]byte("service 1 "))
-		} else {
-			http.NotFound(w, r)
-		}
-	})
+	// mux := http.NewServeMux()
+	// mux.HandleFunc("/service1", func(w http.ResponseWriter, r *http.Request) {
+	// 	if r.URL.Path == "/service1" {
+	// 		w.Write([]byte("service 1 "))
+	// 	} else {
+	// 		http.NotFound(w, r)
+	// 	}
+	// })
 
 	// Tambahkan middleware logging
-	loggedMux := loggingMiddleware(mux)
+	// loggedMux := loggingMiddleware(mux)
 
 	// Mulai server
-	log.Println("Server listening on port 3001")
-	if err := http.ListenAndServe(":3001", loggedMux); err != nil {
-		log.Fatalf("Server failed: %v", err)
+	fmt.Printf("Server running (port=3001"  "), route: http://localhost3001:" + apport)
+	if err := http.ListenAndServe(":3001", nil); err != nil {
+		log.Fatal(err)
 	}
+	
+	// log.Println("Server listening on port 3001")
+	// if err := http.ListenAndServe(":3001", loggedMux); err != nil {
+	// 	log.Fatalf("Server failed: %v", err)
+	// }
 
 }
 
