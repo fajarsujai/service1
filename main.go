@@ -74,7 +74,7 @@ func main() {
 	// loggedMux := loggingMiddleware(mux)
 
 	// Mulai server
-	fmt.Printf("Server running (port=3001"  "), route: http://localhost3001:" + apport)
+	fmt.Printf("Server running (port=3001"  "), route: http://localhost:3001")
 	if err := http.ListenAndServe(":3001", nil); err != nil {
 		log.Fatal(err)
 	}
