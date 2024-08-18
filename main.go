@@ -53,9 +53,9 @@ func main() {
 	// godotenv package
 	// appenv := os.Getenv("APPENV")
 	// apport := os.Getenv("PORT")
-
+	name := "fajar"
 	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Update 1 dan Hello ")
+		fmt.Fprintf(w, "Update 1 dan Hello" + name)
 		log.Println("Update 1 dan Hello ")
 	})
 	
