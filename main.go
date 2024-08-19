@@ -38,7 +38,7 @@ func main() {
         port = "3001"
     }
     fmt.Printf("Starting server on port %s...\n", port)
-    if err := http.ListenAndServe(":"+port, nil); err != nil {
+    if err := http.ListenAndServe("0.0.0.0:"+port, nil); err != nil {
         fmt.Printf("Error starting server: %v\n", err)
     }
 }
