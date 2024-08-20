@@ -29,7 +29,7 @@ func main() {
 
     // Default handler
     http.HandleFunc("/service1", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello, service1!\n")
+        fmt.Fprintf(w, "Hello, service1 perubahan dengan jenkins!\n")
     })
 
     // Start the HTTP server
