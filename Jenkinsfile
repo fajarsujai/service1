@@ -28,6 +28,13 @@ pipeline {
             }
         }
 
+        stage("Update Repo Helm"){
+            steps{
+                script{
+                    sh "helm repo update"
+                }
+            }
+        }
 
         stage("Deploy"){
             steps{
